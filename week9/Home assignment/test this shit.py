@@ -1,14 +1,14 @@
 import sys
 import os
 
-print(sys.argv)
 def mainMenu():
     while True:
-        print(
-            "Command Line Todo application\n ==================\n-l List all the tasks\n-a Adds a new task\n-r Removes a task\n-c Completes a task\n")
+        print("Command Line Todo application\n ==================\n-l List all the tasks\n-a Adds a new task\n-r Removes a task\n-c Completes a task\n")
+
 
         s = input()
         l = s.split(' ')
+
 
         if l[0] == "-l":
             displayList()
@@ -22,13 +22,14 @@ def mainMenu():
             print("Unsupported argument.")
 
 
+
 def displayList():
-    file_size = os.path.getsize('mylist.txt')
+    file_size = os.path.getsize('shitlist.txt')
     if file_size == 0:
         print("No todos today :)")
 
     else:
-        text_file = open("mylist.txt", "r")
+        text_file = open("shitlist.txt", "r")
         lines = text_file.readlines()
         i = 1
         for line in lines:
@@ -37,22 +38,22 @@ def displayList():
 
 
 def addItem(val2):
-
-    fr = open('mylist.txt', 'a')
+   # userIn = input("please enter your task item\n")
+    fr = open('shitlist.txt', 'a')
     fr.write("\n" + val2)
     fr.close()
 
 
 def removeItem(val2):
-
+  #  userIn = input("please enter the line number you want to remove\n")
     try:
         kb = int(val2)
-        fr = open('mylist.txt', 'r')
+        fr = open('shitlist.txt', 'r')
         lines = fr.readlines()
         del lines[kb - 1]
         print(lines)
 
-        fr = open('mylist.txt', 'w')
+        fr = open('shitlist.txt', 'w')
         for item in lines:
             fr.write("%s" % item)
         fr.close()
@@ -63,12 +64,12 @@ def removeItem(val2):
 
 def checkItem(val2):
     kb = val2
-    fr = open('mylist.txt', 'r')
+    fr = open('shitlist.txt', 'r')
     lines = fr.readlines()
     lines[int(kb) - 1] = "[*]" + lines[int(kb) - 1] + "\n"
     print(lines)
 
-    fr = open('mylist.txt', 'w')
+    fr = open('shitlist.txt', 'w')
     for item in lines:
         fr.write("%s" % item)
     fr.close()
