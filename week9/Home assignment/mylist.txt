@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [*]Walk the dog
 [*]
 
@@ -10,3 +11,10 @@ Buy milk-auauaua
 -ayesyesyes
 -ayeaidis
 -ahaaahaaahaaaaaaa
+=======
+Walk the dog
+Do homework
+Apple
+Wood
+Buy milk
+>>>>>>> origin/main
