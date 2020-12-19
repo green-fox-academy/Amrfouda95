@@ -32,7 +32,7 @@ def displayList():
         lines = text_file.readlines()
         i = 1
         for line in lines:
-            print(str(i) + ". " + "[ ] " + line)
+            print(str(i) + ". " + line)
             i = i + 1
 
 

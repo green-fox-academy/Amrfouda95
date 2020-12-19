@@ -13,7 +13,10 @@ def mainMenu():
         if l[0] == "-l":
             displayList()
         elif l[0] == "-a":
-            addItem(l[1])
+            str1 = ""
+            for item in l:
+                str1 += item
+            addItem(str1)
         elif l[0] == "-r":
             removeItem(l[1])
         elif l[0] == "-c":
@@ -36,10 +39,10 @@ def displayList():
             i = i + 1
 
 
-def addItem(val2):
+def addItem(str1):
 
     fr = open('mylist.txt', 'a')
-    fr.write("\n" + val2)
+    fr.write("\n" + str1)
     fr.close()
 
 
@@ -62,6 +65,7 @@ def removeItem(val2):
 
 
 def checkItem(val2):
+
     kb = val2
     fr = open('mylist.txt', 'r')
     lines = fr.readlines()
